@@ -17,10 +17,21 @@ sheet = client.open("Interest Form (Responses)").sheet1
 pp = pprint.PrettyPrinter()
 
 # Extract and print all the values
-interests = sheet.get_all_records()
+interests = sheet.get_all_records()     #Interest is a list of dictionaries where the key are the questions and the values are the answers
+
+                                        #Example: 
+                                        #   [{'What is your first name?' : 'Angelo',    |
+                                        #   'Are you a big or little?' : 'Little',      |----- A first dictionary in the list 
+                                        #   'Cooking/Baking' : 'Love'},                 |
+                                        #   ...
+                                        #   {'What is your first name?' : 'Bob',        |
+                                        #   'Are you a big or little? : 'Little'        |------Second dictionary in the list
+                                        #   'Cooking/Baking' : Like'}                   |
 
 
-#row = sheet.row_values(3)
-#col = sheet.col_values(3)
-#cell = sheet.cell(2,3).value
-# pp.pprint(interests)
+pp.pprint(interests)
+
+
+#row = sheet.row_values(3)              #Gets the value of the 3rd row 
+#col = sheet.col_values(3)              #Gets the value of the 3rd column
+#cell = sheet.cell(2,3).value           #Gets the specific value at cell (2,3)

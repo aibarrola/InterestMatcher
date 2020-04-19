@@ -32,23 +32,12 @@ class User:
 
 
 
-#for row in range(1,23):
-#     Big_Angelo_Ibarrola = User(sheet.cell(2,row).value)
-
-# Big_Angelo_Ibarrola = User('Angelo')
-# People = [None for __ in range(9)]
-# for y in range(len(People)):
-# 	People[y] = User( *[sheet.cell(y+2,x).value for x in range(2,27)] )
-
-
-
-
 #TAKES EACH VALUE OF THE DICTIONARY AND PUTS IT INTO A LIST
 PBig = []
 PLittle = []   
-for i in range(len(interests)): 
-    person = User( *([value for key, value in interests[i].items()][1:]))
-    if person.role == "Big":
+for i in range(len(interests)):                                             #Goes through each dictionary in the list 
+    person = User( *([value for key, value in interests[i].items()][1:]))   #Takes each dictionary and takes the value and puts into each object named person
+    if person.role == "Big":                                                #Categorize each user into a little or big list
         PBig.append(person)
     elif person.role == "Little":
         PLittle.append(person)
@@ -109,15 +98,24 @@ def ScoreCompatibility(little,big):
     totalScore += eachScoreCompatibility(little.working_out, big.working_out)
     return totalScore
 
+#GET PERCENTAGE 
+def getPercentage(scoreCompatibility):
+    return ("%.2f%%" % (100 * scoreCompatibility/88))
 
 
-
-print("Little name is " + PLittle[0].fname)
+#THE PERFECT COMPATIBILITY PAIR: LITTLE-WANT TO GET INTO, BIG-LOVE
+print("Little name is " + PLittle[0].fname + PLittle[0].lname)
+print("Big name is " + PBig[0].fname + PBig[0].lname)
+print("The Compatibility Score between " + PLittle[0].fname + " and " + PBig[0].fname + "is " + str(ScoreCompatibility(PLittle[0], PBig[0])))
+print(getPercentage(ScoreCompatibility(PLittle[0],PBig[0])))
 print("-----")
-print("Big name is " + PBig[0].fname)
+
+
+print("Little name is " + PLittle[5].fname + PLittle[5].lname)
+print("Big name is " + PBig[2].fname + PBig[2].lname)
+print("The Compatibility Score between " + PLittle[5].fname + " and " + PBig[2].fname + " is " + str(ScoreCompatibility(PLittle[5], PBig[2])))
+print(getPercentage(ScoreCompatibility(PLittle[5],PBig[2])))
 print("-----")
-print("The Compatibility Score between " + PLittle[0].fname + " and " + PBig[0].fname + " is " + str(ScoreCompatibility(PLittle[0], PBig[0])))
-    
 
 
 # print(PLittle)
