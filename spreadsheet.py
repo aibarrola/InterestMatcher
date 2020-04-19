@@ -19,4 +19,8 @@ pp = pprint.PrettyPrinter()
 # Extract and print all the values
 interests = sheet.get_all_records()
 
+
+#row = sheet.row_values(3)
+#col = sheet.col_values(3)
+#cell = sheet.cell(2,3).value
 # pp.pprint(interests)
