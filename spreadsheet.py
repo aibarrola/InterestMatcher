@@ -18,4 +18,5 @@ pp = pprint.PrettyPrinter()
 
 # Extract and print all the values
 interests = sheet.get_all_records()
-pp.pprint(interests)
+
+# pp.pprint(interests)
