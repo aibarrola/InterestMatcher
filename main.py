@@ -1,5 +1,6 @@
 from spreadsheet import *
 from dataclasses import dataclass
+from operator import itemgetter
 
 
 @dataclass
@@ -96,6 +97,38 @@ def ScoreCompatibility(little,big):
     totalScore += eachScoreCompatibility(little.working_out, big.working_out)
     return totalScore
 
+def countingSort(arr, exp1):
+    n = len(arr)
+
+    output = [0] * (n)
+
+    count = [0]*(10)
+
+    for i in range(0, n):
+        index = (9-arr[i][1]//exp1)
+        count[ (index)%10 ] += 1
+
+    for i in range(1, 10):
+        count[i] += count[i-1]
+
+    i = n-1
+    while i >= 0:
+        index = (9-arr[i][1]//exp1)
+        output[ count[ (index)%10 ] -1] = arr[i]
+        count[ (index)%10 ] -= 1
+        i -= 1
+
+    for i in range(0, len(arr)):
+        arr[i] = output[i]
+
+def radixSort(arr):
+    max1 = max(arr, key=itemgetter(1))
+
+    exp = 1
+    while max1[1]/exp > 0:
+        countingSort(arr, exp)
+        exp *= 10
+
 #CREATING A NEW LIST FOR RANKED SORTING
 rankedLittle = [[0 for x in range(2)] for y in range(len(PLittle))]
 
@@ -109,9 +142,11 @@ for i in range(0, len(PLittle)):
     for x in range(0, len(PBig)):
         big = (PBig[x].fname + '_' + PBig[x].lname, ScoreCompatibility(PLittle[i], PBig[x])) #Creating big pairs with their score
         rankedBigs.append(big)
+    radixSort(rankedBigs)
     rankedLittle[i][1] = rankedBigs # Inserts list of unsorted Bigs into rankedLittle list
 
-# print(rankedLittle)
+# Use this to check each individual littles best match
+# print(rankedLittle[4]) 
 
 
 #GET PERCENTAGE 
