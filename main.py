@@ -46,23 +46,32 @@ for i in range(len(interests)):                                             #Goe
 def eachScoreCompatibility(littleInput, bigInput):
     points = 0
     if littleInput == "Love" and bigInput == "Love":
-        points += 3
+        points += 30
     elif littleInput == "Love" and bigInput == "Like":
-        points += 2
+        points += 20
     elif littleInput == "Love" and bigInput == "Want to get into":
-        points += 1
+        points += 10
     elif littleInput == "Like" and bigInput == "Love":
-        points += 2
+        points += 20
     elif littleInput == "Like" and bigInput == "Like":
-        points += 2
+        points += 20
     elif littleInput == "Like" and bigInput == "Want to get into":
-        points += 1
+        points += 10
     elif littleInput == "Want to get into" and bigInput == "Love":
-        points += 4
+        points += 40
     elif littleInput == "Want to get into" and bigInput == "Like":
-        points += 3
+        points += 30
     elif littleInput == "Want to get into" and bigInput == "Want to get into":
-        points += 3
+        points += 30
+    elif littleInput =="N/A" and bigInput =="N/A":
+        points += 30
+    elif littleInput =="N/A" and bigInput =="Love":
+        points += 2
+    elif littleInput =="N/A" and bigInput =="Like":
+        points += 4
+    elif littleInput =="N/A" and bigInput =="Want to get into":
+        points += 8
+    
     return points
    
 
