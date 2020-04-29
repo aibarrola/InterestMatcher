@@ -148,6 +148,66 @@ for i in range(0, len(PLittle)):
 # Use this to check each individual littles best match
 # print(rankedLittle[4]) 
 
+# for i in range(len(PBig)):
+#     print(rankedLittle[0][1][i])
+
+# TEMP CONSOLE GUI
+z = -1
+
+while (True):
+    print('==== Enter the corresponding number to view the top 5 bigs for each little ====')
+
+    for i in range(len(PLittle)):
+        print(str(i+1) +'. ' + PLittle[i].fname + ' ' + PLittle[i].lname)
+    print('0. Exit program')
+    z = int(input())
+    if (z < 1):
+        break
+    elif (z == 1):
+        print('------------------------------------------------------------')
+        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
+        for i in range(0, 5):
+            print(rankedLittle[z-1][1][i])
+        print('------------------------------------------------------------')
+    elif (z == 2):
+        print('------------------------------------------------------------')
+        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
+        for i in range(0, 5):
+            print(rankedLittle[z-1][1][i])
+        print('------------------------------------------------------------')
+    elif (z == 3):
+        print('------------------------------------------------------------')
+        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
+        for i in range(0, 5):
+            print(rankedLittle[z-1][1][i])
+        print('------------------------------------------------------------')
+    elif (z == 4):
+        print('------------------------------------------------------------')
+        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
+        for i in range(0, 5):
+            print(rankedLittle[z-1][1][i])
+        print('------------------------------------------------------------')
+    elif (z == 5):
+        print('------------------------------------------------------------')
+        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
+        for i in range(0, 5):
+            print(rankedLittle[z-1][1][i])
+        print('------------------------------------------------------------')
+    elif (z == 6):
+        print('------------------------------------------------------------')
+        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
+        for i in range(0, 5):
+            print(rankedLittle[z-1][1][i])
+        print('------------------------------------------------------------')
+    elif (z == 7):
+        print('------------------------------------------------------------')
+        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
+        for i in range(0, 5):
+            print(rankedLittle[z-1][1][i])
+        print('------------------------------------------------------------')
+    else:
+        break
+
 
 #GET PERCENTAGE 
 def getPercentage(scoreCompatibility):
