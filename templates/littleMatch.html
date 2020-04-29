@@ -1,0 +1,19 @@
+{% extends "mainTemplate.html" %}
+
+{% block content %}
+
+    <u> <div class="title"> Little Matches </div> </u>
+
+    <div class = "vMenu">
+        <a href="/" class="nav-btn">Home</a>
+        <hr>   
+    </div>
+
+    <div id = "littleGroup">
+        {% for little in littles %}
+            <p class = "lTitle" href="/littleMatch"> {{ little[0]}} </p>
+            <p class = "lMatch" href="/littleMatch"> {{ little[1]}} </p>
+        {% endfor %}
+    </div>
+
+{% endblock%}

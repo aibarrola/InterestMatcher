@@ -1,8 +1,9 @@
 from spreadsheet import *
 from dataclasses import dataclass
 from operator import itemgetter
-import eel
+from flask import Flask, render_template, url_for
 
+app = Flask(__name__)
 
 @dataclass
 class User:
@@ -42,43 +43,28 @@ for i in range(len(interests)):                                             #Goe
     elif person.role == "Little":
         PLittle.append(person)
 
-
 #FUNCTION TO ADD POINTS BASED ON LITTLE AND BIG INPUT (REFER TO POINT SYSTEM)
 def eachScoreCompatibility(littleInput, bigInput):
     points = 0
     if littleInput == "Love" and bigInput == "Love":
-        points += 30
+        points += 3
     elif littleInput == "Love" and bigInput == "Like":
-        points += 20
-    elif littleInput == "Love" and bigInput == "Want to get into":
-        points += 10
-    elif littleInput == "Like" and bigInput == "Love":
-        points += 20
-    elif littleInput == "Like" and bigInput == "Like":
-        points += 20
-    elif littleInput == "Like" and bigInput == "Want to get into":
-        points += 10
-    elif littleInput == "Want to get into" and bigInput == "Love":
-        points += 40
-    elif littleInput == "Want to get into" and bigInput == "Like":
-        points += 30
-    elif littleInput == "Want to get into" and bigInput == "Want to get into":
-        points += 30
-    elif littleInput =="N/A" and bigInput =="N/A":
-        points += 30
-    elif littleInput =="N/A" and bigInput =="Love":
         points += 2
-    elif littleInput =="N/A" and bigInput =="Like":
+    elif littleInput == "Love" and bigInput == "Want to get into":
+        points += 1
+    elif littleInput == "Like" and bigInput == "Love":
+        points += 2
+    elif littleInput == "Like" and bigInput == "Like":
+        points += 2
+    elif littleInput == "Like" and bigInput == "Want to get into":
+        points += 1
+    elif littleInput == "Want to get into" and bigInput == "Love":
         points += 4
-    elif littleInput =="N/A" and bigInput =="Want to get into":
-        points += 8
-    
+    elif littleInput == "Want to get into" and bigInput == "Like":
+        points += 3
+    elif littleInput == "Want to get into" and bigInput == "Want to get into":
+        points += 3
     return points
-   
-
-#TEST eachScoreComptability Function     
-#print(eachScoreCompatibility(PLittle[0].sports, PBig[0].sports))
- 
 
 #FUNCTION TO FIND COMPATIBILITY SCORE BETWEEN A LITTLE AND BIG
 def ScoreCompatibility(little,big):
@@ -146,7 +132,7 @@ def compatPerc(ScoreCompatibility):
 rankedLittle = [[0 for x in range(2)] for y in range(len(PLittle))]
 
 for i in range(0, len(PLittle)):            # Inputs little's name for first index
-    rankedLittle[i][0] = PLittle[i].fname
+    rankedLittle[i][0] = PLittle[i].fname + ' ' + PLittle[i].lname
 #print(rankedLittle)
 
 #CREATING A NEW LIST FOR RANKING BIGS
@@ -159,27 +145,21 @@ for i in range(0, len(PLittle)):
     radixSort(rankedBigs)
     rankedLittle[i][1] = rankedBigs # Inserts list of unsorted Bigs into rankedLittle list
 
+@app.route("/")
+def home():
+    return render_template('home.html')
 
-# TEMP CONSOLE GUI
-z = -1
+@app.route("/littles")
+def littles():
+    return render_template('littles.html', littles=rankedLittle, title="Little List")
 
-def littlePrint(z):
-    print('------------------------------------------------------------')
-    print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
-    for i in range(0, 5):
-        print(rankedLittle[z-1][1][i])
-    print('------------------------------------------------------------')
+@app.route("/bigs")
+def bigs():
+    return render_template('bigs.html', bigs=PBig, title="Bigs List")
 
-while (True):
-    print('==== Enter the corresponding number to view the top 5 bigs for each little ====')
+@app.route("/littleMatch")
+def littleMatch():
+    return render_template('littleMatch.html', littles=rankedLittle, title="Little Match")
 
-    for i in range(len(PLittle)):
-        print(str(i+1) +'. ' + PLittle[i].fname + ' ' + PLittle[i].lname)
-    print('0. Exit program')
-    z = int(input())
-    if (z < 1):
-        break
-    elif (z > len(PLittle)):
-        break
-    else:
-        littlePrint(z)
+if __name__ == '__main__':
+    app.run(debug=True)
