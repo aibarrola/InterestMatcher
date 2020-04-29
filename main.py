@@ -1,6 +1,7 @@
 from spreadsheet import *
 from dataclasses import dataclass
 from operator import itemgetter
+import eel
 
 
 @dataclass
@@ -129,6 +130,9 @@ def radixSort(arr):
         countingSort(arr, exp)
         exp *= 10
 
+def compatPerc(ScoreCompatibility):
+    return ((ScoreCompatibility/88) * 100)
+
 #CREATING A NEW LIST FOR RANKED SORTING
 rankedLittle = [[0 for x in range(2)] for y in range(len(PLittle))]
 
@@ -140,7 +144,8 @@ for i in range(0, len(PLittle)):            # Inputs little's name for first ind
 for i in range(0, len(PLittle)):
     rankedBigs = []                 # Used to store bigs with name and score
     for x in range(0, len(PBig)):
-        big = (PBig[x].fname + '_' + PBig[x].lname, ScoreCompatibility(PLittle[i], PBig[x])) #Creating big pairs with their score
+        percent = compatPerc(ScoreCompatibility(PLittle[i], PBig[x]))
+        big = (PBig[x].fname + ' ' + PBig[x].lname, int(percent)) # Creating big pairs with their score
         rankedBigs.append(big)
     radixSort(rankedBigs)
     rankedLittle[i][1] = rankedBigs # Inserts list of unsorted Bigs into rankedLittle list
@@ -165,10 +170,7 @@ while (True):
     z = int(input())
     if (z < 1):
         break
+    elif (z > len(PLittle)):
+        break
     else:
         littlePrint(z)
-
-
-#GET PERCENTAGE 
-def getPercentage(scoreCompatibility):
-    return ("%.2f%%" % (100 * scoreCompatibility/88))
