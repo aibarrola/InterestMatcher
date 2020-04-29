@@ -145,14 +145,16 @@ for i in range(0, len(PLittle)):
     radixSort(rankedBigs)
     rankedLittle[i][1] = rankedBigs # Inserts list of unsorted Bigs into rankedLittle list
 
-# Use this to check each individual littles best match
-# print(rankedLittle[4]) 
-
-# for i in range(len(PBig)):
-#     print(rankedLittle[0][1][i])
 
 # TEMP CONSOLE GUI
 z = -1
+
+def littlePrint(z):
+    print('------------------------------------------------------------')
+    print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
+    for i in range(0, 5):
+        print(rankedLittle[z-1][1][i])
+    print('------------------------------------------------------------')
 
 while (True):
     print('==== Enter the corresponding number to view the top 5 bigs for each little ====')
@@ -163,72 +165,10 @@ while (True):
     z = int(input())
     if (z < 1):
         break
-    elif (z == 1):
-        print('------------------------------------------------------------')
-        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
-        for i in range(0, 5):
-            print(rankedLittle[z-1][1][i])
-        print('------------------------------------------------------------')
-    elif (z == 2):
-        print('------------------------------------------------------------')
-        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
-        for i in range(0, 5):
-            print(rankedLittle[z-1][1][i])
-        print('------------------------------------------------------------')
-    elif (z == 3):
-        print('------------------------------------------------------------')
-        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
-        for i in range(0, 5):
-            print(rankedLittle[z-1][1][i])
-        print('------------------------------------------------------------')
-    elif (z == 4):
-        print('------------------------------------------------------------')
-        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
-        for i in range(0, 5):
-            print(rankedLittle[z-1][1][i])
-        print('------------------------------------------------------------')
-    elif (z == 5):
-        print('------------------------------------------------------------')
-        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
-        for i in range(0, 5):
-            print(rankedLittle[z-1][1][i])
-        print('------------------------------------------------------------')
-    elif (z == 6):
-        print('------------------------------------------------------------')
-        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
-        for i in range(0, 5):
-            print(rankedLittle[z-1][1][i])
-        print('------------------------------------------------------------')
-    elif (z == 7):
-        print('------------------------------------------------------------')
-        print("Little: " + PLittle[z-1].fname + ' ' + PLittle[z-1].lname)
-        for i in range(0, 5):
-            print(rankedLittle[z-1][1][i])
-        print('------------------------------------------------------------')
     else:
-        break
+        littlePrint(z)
 
 
 #GET PERCENTAGE 
 def getPercentage(scoreCompatibility):
     return ("%.2f%%" % (100 * scoreCompatibility/88))
-
-
-#THE PERFECT COMPATIBILITY PAIR: LITTLE-WANT TO GET INTO, BIG-LOVE
-# print("Little name is " + PLittle[0].fname + PLittle[0].lname)
-# print("Big name is " + PBig[0].fname + PBig[0].lname)
-# print("The Compatibility Score between " + PLittle[0].fname + " and " + PBig[0].fname + "is " + str(ScoreCompatibility(PLittle[0], PBig[0])))
-# print(getPercentage(ScoreCompatibility(PLittle[0],PBig[0])))
-# print("-----")
-
-
-# print("Little name is " + PLittle[5].fname + PLittle[5].lname)
-# print("Big name is " + PBig[2].fname + PBig[2].lname)
-# print("The Compatibility Score between " + PLittle[5].fname + " and " + PBig[2].fname + " is " + str(ScoreCompatibility(PLittle[5], PBig[2])))
-# print(getPercentage(ScoreCompatibility(PLittle[5],PBig[2])))
-# print("-----")
-
-
-# print(PLittle)
-# print()
-# print(PBig)
