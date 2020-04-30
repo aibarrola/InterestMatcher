@@ -8,8 +8,11 @@
 <div class = "vMenu">
     <a href="/" class="nav-btn">Home</a>
     <hr>
-    {% for little in littles %}
+    <!-- {% for little in littles %}
         <a class = "lNames" href="/littleMatch"> {{ little[0]}} </a>
+    {% endfor %} -->
+    {% for little in littles %}
+        <a class = "lNames" href="/littles/{{little[0]}}"> {{ little[0]}} </a>
     {% endfor %}
 </div>
 

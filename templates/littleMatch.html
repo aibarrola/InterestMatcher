@@ -2,17 +2,21 @@
 
 {% block content %}
 
-    <u> <div class="title"> Little Matches </div> </u>
+    <u> <div class = "title"> {{selected}} </div> </u>
+    <div class = "subTitle"> Top 5 Bigs </div>
 
     <div class = "vMenu">
-        <a href="/" class="nav-btn">Home</a>
+        <a href="/littles" class="nav-btn">Back</a>
         <hr>   
     </div>
 
-    <div id = "littleGroup">
-        {% for little in littles %}
-            <p class = "lTitle" href="/littleMatch"> {{ little[0]}} </p>
-            <p class = "lMatch" href="/littleMatch"> {{ little[1]}} </p>
+    <div id="littleGroup">
+        {% for i in range(littles|length)%}
+            {% if selected == littles[i][0]%}
+                {% for x in range(0, 5) %}
+                    <p class = "lTitle" href="/littleMatch"> {{littles[i][1][x]}} </p>
+                {% endfor %}
+            {% endif %}
         {% endfor %}
     </div>
 
