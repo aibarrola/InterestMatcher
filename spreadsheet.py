@@ -29,7 +29,7 @@ interests = sheet.get_all_records()     #Interest is a list of dictionaries wher
                                         #   'Cooking/Baking' : Like'}                   |
 
 
-pp.pprint(interests)
+#pp.pprint(interests)
 
 
 #row = sheet.row_values(3)              #Gets the value of the 3rd row 
