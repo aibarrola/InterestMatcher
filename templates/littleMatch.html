@@ -6,7 +6,7 @@
     <div class = "subTitle"> Top 5 Bigs </div>
 
     <div class = "vMenu">
-        <a href="/littles" class="nav-btn">Back</a>
+        <a href="/littles" class="nav-btn-second">Back</a>
         <hr>   
     </div>
 
@@ -14,7 +14,7 @@
         {% for i in range(littles|length)%}
             {% if selected == littles[i][0]%}
                 {% for x in range(0, 5) %}
-                    <p class = "lTitle" href="/littleMatch"> {{littles[i][1][x]}} </p>
+                    <p class = "lTitle" href="/littleMatch"> {{littles[i][1][x][0] + ':'+ ' ' +  littles[i][1][x][1]|string + '%'}} </p>
                 {% endfor %}
             {% endif %}
         {% endfor %}

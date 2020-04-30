@@ -6,11 +6,8 @@
 <div class = "subTitle"> Click on a name to view top 5 matching bigs </div>
 
 <div class = "vMenu">
-    <a href="/" class="nav-btn">Home</a>
+    <a href="/" class="nav-btn-second">Home</a>
     <hr>
-    <!-- {% for little in littles %}
-        <a class = "lNames" href="/littleMatch"> {{ little[0]}} </a>
-    {% endfor %} -->
     {% for little in littles %}
         <a class = "lNames" href="/littles/{{little[0]}}"> {{ little[0]}} </a>
     {% endfor %}
