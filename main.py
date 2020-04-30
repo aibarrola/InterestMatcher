@@ -157,9 +157,13 @@ def littles():
 def bigs():
     return render_template('bigs.html', bigs=PBig, title="Bigs List")
 
-@app.route("/littleMatch")
-def littleMatch():
-    return render_template('littleMatch.html', littles=rankedLittle, title="Little Match")
+# @app.route("/littleMatch")
+# def littleMatch():
+#     return render_template('littleMatch.html', littles=rankedLittle, title="Little Match")
+
+@app.route("/littles/<little>")
+def littleMatch(little):
+    return render_template('littleMatch.html', littles=rankedLittle, title=little, selected=little)
 
 if __name__ == '__main__':
     app.run(debug=True)
