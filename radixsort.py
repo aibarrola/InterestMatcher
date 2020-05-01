@@ -61,6 +61,6 @@ def newList():
             rankedBigs.append(big)
         radixSort(rankedBigs)
         rankedLittle[i][1] = rankedBigs # Inserts list of unsorted Bigs into rankedLittle list
-        return rankedLittle
+    return rankedLittle
 
 #print(rankedBigs)
