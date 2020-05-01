@@ -6,6 +6,13 @@ body {
     background-color: #e9ebed;
 }
 
+.homeTitle{
+    width: 50%;
+    font-size:4em;
+    margin: auto;
+    text-align:center;
+}
+
 .title {
     width: 50%;
     font-size: 2.5em;
@@ -14,16 +21,13 @@ body {
     text-align: center;
 }
 
-.mTitle {
+.subTitle {
     width: 50%;
-    font-size: 3em;
-    margin: 3% auto;
+    font-size: 20px;
+    margin: auto;
     text-align: center;
-    background-color: #6095ff;
-    color: white;
-    border-radius: 40px;
-    padding: 10px 25px;
-}
+} 
+
 
 .vMenu .subTitle {
     font-size: 2em;
@@ -78,13 +82,6 @@ body {
 
 /* Littles Page */
 
-.subTitle {
-    width: 50%;
-    font-size: 20px;
-    margin: auto;
-    text-align: center;
-} 
-
 .lNames {
     text-decoration: none;
     display: block;
@@ -103,13 +100,13 @@ body {
     background-color: #527ed6; 
     transform: translateY(-8px);
  }
-
- /* Littles Match Page */
- #littleGroup {
+ 
+ #littleGroup, #bigGroup {
     width: 50%;
     margin: 3% auto;
  }
-
+ 
+/* Littles Match Page */
  #littleGroup .lTitle {
      width: 80%;
      font-size: 35px;
@@ -121,18 +118,6 @@ body {
      background-color: #6095ff;
      border-top-left-radius: 5px;
      border-top-right-radius: 5px;;
- }
-
- #littleGroup .lMatch {
-     width: 80%;
-     font-size: 30px;
-     margin: auto;
-     margin-top: 0;
-     text-align: center;
-     color: white;
-     background-color: #6095ff;
-     border-bottom-left-radius: 5px;
-     border-bottom-right-radius: 5px;
  }
 
  /* Bigs Pages */
@@ -148,3 +133,16 @@ body {
     background-color: #6095ff;
     border-radius: 5px;
  }
+
+ #BigGroup .BTitle {
+    width: 30%;
+    font-size: 35px;
+    margin: auto;
+    text-align: center;
+    margin-top: 3%;
+    padding: 25px 10px;
+    color: white;
+    background-color: #6095ff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;;
+}
