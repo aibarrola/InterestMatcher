@@ -6,11 +6,13 @@ from flask import Flask, render_template, url_for
 
 SeperateObj()           #CREATES DATA CLASS AND OBJECT FOR EACH USER THEN SEPERATES INTO LITTLE AND BIG LIST         
 
-#FLASK FUNCTION TO DIRECT FLASK TO THIS FILE TO START THE APP
 app = Flask(__name__)
 
 
 rankedLittle = newList()
+
+
+
 
 # BELOW IS USED FOR THE WEB GUI (FLASK)
 
