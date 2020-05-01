@@ -6,13 +6,11 @@ from flask import Flask, render_template, url_for
 
 SeperateObj()           #CREATES DATA CLASS AND OBJECT FOR EACH USER THEN SEPERATES INTO LITTLE AND BIG LIST         
 
+#FLASK FUNCTION TO DIRECT FLASK TO THIS FILE TO START THE APP
 app = Flask(__name__)
 
 
 rankedLittle = newList()
-
-
-
 
 # BELOW IS USED FOR THE WEB GUI (FLASK)
 
@@ -36,6 +34,10 @@ def bigs():
 def littleMatch(little):
     return render_template('littleMatch.html', littles=rankedLittle, title=little, selected=little)
 
+#AUTOGENERATING BIGS PAGE WITH THEIR INTERESTS
+@app.route("/bigs/<big>")
+def bigInterest(big):
+    return render_template('bigForm.html', bigs=PBig, title=big, selected=big)
 
 #REQUIRED TO START FLASK THROUGH PYTHON BY JUST RUNNING THE MAIN FILE
 if __name__ == '__main__':
