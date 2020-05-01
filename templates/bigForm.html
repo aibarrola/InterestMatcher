@@ -1,0 +1,43 @@
+{% extends "mainTemplate.html" %}
+
+{% block content %}
+
+    <u> <div class = "title"> {{selected}} </div> </u>
+    <div class = "subTitle"> Top 5 Bigs </div>
+
+    <div class = "vMenu">
+        <a href="/bigs" class="nav-btn-second">Back</a>
+        <hr>   
+    </div>
+
+    <div id="littleGroup">
+
+        {% for i in range(bigs|length) %}
+            {% if selected == bigs[i].fname + ' ' + bigs[i].lname%}
+                <p class="lTitle"> {{'Sports: ' + bigs[i].sports }}</p>
+                <p class="lTitle"> {{'Hiking: ' + bigs[i].hiking }}</p>
+                <p class="lTitle"> {{'Fashion: ' + bigs[i].fashion }}</p>
+                <p class="lTitle"> {{'Gaming: ' + bigs[i].gaming }}</p>
+                <p class="lTitle"> {{'Singing: ' + bigs[i].singing }}</p>
+                <p class="lTitle"> {{'Dancing: ' + bigs[i].dancing }}</p>
+                <p class="lTitle"> {{'Makeup: ' + bigs[i].makeup }}</p>
+                <p class="lTitle"> {{'Relgion: ' + bigs[i].religion_faith }}</p>
+                <p class="lTitle"> {{'Traveling: ' + bigs[i].traveling }}</p>
+                <p class="lTitle"> {{'Thrifting: ' + bigs[i].thrifting }}</p>
+                <p class="lTitle"> {{'Photography: ' + bigs[i].photography }}</p>
+                <p class="lTitle"> {{'Concerts: ' + bigs[i].concerts }}</p>
+                <p class="lTitle"> {{'Leadership: ' + bigs[i].leadership }}</p>
+                <p class="lTitle"> {{'Volunteering: ' + bigs[i].volunteering }}</p>
+                <p class="lTitle"> {{'Staying at Home: ' + bigs[i].staying_at_home }}</p>
+                <p class="lTitle"> {{'Foodie: ' + bigs[i].foodie }}</p>
+                <p class="lTitle"> {{'Memes: ' + bigs[i].memes }}</p>
+                <p class="lTitle"> {{'Cooking & Baking: ' + bigs[i].cooking_baking }}</p>
+                <p class="lTitle"> {{'Family Time: ' + bigs[i].family_time }}</p>
+                <p class="lTitle"> {{'Playing Instruments: ' + bigs[i].playing_instruments }}</p>
+                <p class="lTitle"> {{'Vlogging / Making Videos: ' + bigs[i].vlogging_making_videos}}</p>
+                <p class="lTitle"> {{'Working Out: ' + bigs[i].working_out }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+{% endblock%}
