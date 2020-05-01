@@ -46,8 +46,8 @@ def radixSort(arr):
         exp *= 10
 
 #CREATES A PERCENTAGE SCORE
-def compatPerc(ScoreCompatibility):
-    return ((ScoreCompatibility/880) * 100)
+def compatPerc(ScoreCompatibility, TotalDenominator):
+    return ((ScoreCompatibility/TotalDenominator) * 100)
 
 #CREATING A NEW LIST FOR RANKED SORTING
 rankedLittle = [[0 for x in range(2)] for y in range(len(PLittle))]
@@ -58,7 +58,7 @@ for i in range(0, len(PLittle)):            # Inputs little's name for first ind
 for i in range(0, len(PLittle)):
     rankedBigs = []                 # Used to store bigs with name and score
     for x in range(0, len(PBig)):
-        percent = compatPerc(ScoreCompatibility(PLittle[i], PBig[x]))
+        percent = compatPerc(ScoreCompatibility(PLittle[i], PBig[x]), TotalDenominator(PLittle[i]))
         big = (PBig[x].fname + ' ' + PBig[x].lname, int(percent)) # Creating big pairs with their score
         rankedBigs.append(big)
     radixSort(rankedBigs)
