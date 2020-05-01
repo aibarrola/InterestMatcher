@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+    padding: 0;
+    font-family: "Raleway";
+    background-color: #e9ebed;
+}
+
+.title {
+    width: 50%;
+    font-size: 2.5em;
+    margin: auto;
+    margin-top: 3%;
+    text-align: center;
+}
+
+.mTitle {
+    width: 50%;
+    font-size: 3em;
+    margin: 3% auto;
+    text-align: center;
+    background-color: #6095ff;
+    color: white;
+    border-radius: 40px;
+    padding: 10px 25px;
+}
+
+.vMenu .subTitle {
+    font-size: 2em;
+}
+
+.vMenu {
+    width: 50%;
+    margin: 2% auto;
+    border-radius: 10px;
+}
+
+.vMenu .nav-btn {
+    text-decoration: none;
+    background-color: #6095ff;
+    color: white;
+    font-size: 2.5em;
+    display: block;
+    width: 60%;
+    text-align: center;
+    margin: 3% auto;
+    margin-bottom: 50px;
+    padding: 5% 15%;
+    border-radius: 40px;
+    border-top-left-radius: 0;
+    transition: 300ms;
+}
+
+.nav-btn:hover {
+   background-color: #527ed6; 
+   transform: translateY(-8px);
+}
+
+.vMenu .nav-btn-second {
+    text-decoration: none;
+    background-color: #6095ff;
+    color: white;
+    font-size: 2em;
+    display: block;
+    width: 40%;
+    text-align: center;
+    margin: 3% auto;
+    padding: 5% 15%;
+    border-radius: 40px;
+    border-top-left-radius: 0;
+    transition: 300ms;
+}
+
+.nav-btn-second:hover {
+   background-color: #527ed6; 
+   transform: translateY(-8px);
+}
+
+/* Littles Page */
+
+.subTitle {
+    width: 50%;
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+} 
+
+.lNames {
+    text-decoration: none;
+    display: block;
+    width: 50%;
+    font-size: 35px;
+    margin: 3% auto;
+    text-align: center;
+    padding: 25px 10px;
+    color: white;
+    background-color: #6095ff;
+    border-radius: 5px;
+    transition: 300ms;
+}
+
+.lNames:hover {
+    background-color: #527ed6; 
+    transform: translateY(-8px);
+ }
+
+ /* Littles Match Page */
+ #littleGroup {
+    width: 50%;
+    margin: 3% auto;
+ }
+
+ #littleGroup .lTitle {
+     width: 80%;
+     font-size: 35px;
+     margin: auto;
+     text-align: center;
+     margin-top: 3%;
+     padding: 25px 10px;
+     color: white;
+     background-color: #6095ff;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;;
+ }
+
+ #littleGroup .lMatch {
+     width: 80%;
+     font-size: 30px;
+     margin: auto;
+     margin-top: 0;
+     text-align: center;
+     color: white;
+     background-color: #6095ff;
+     border-bottom-left-radius: 5px;
+     border-bottom-right-radius: 5px;
+ }
+
+ /* Bigs Pages */
+ #bNames {
+    text-decoration: none;
+    display: block;
+    width: 50%;
+    font-size: 35px;
+    margin: 3% auto;
+    text-align: center;
+    padding: 25px 10px;
+    color: white;
+    background-color: #6095ff;
+    border-radius: 5px;
+ }

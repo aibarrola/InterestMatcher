@@ -1,0 +1,16 @@
+{% extends "mainTemplate.html" %}
+
+{% block content %}
+
+<div class = "title"> List of Bigs</div>
+<div class = "subTitle"> Just the list of bigs </div>
+
+<div class = "vMenu">
+    <a href="/" class="nav-btn-second">Home</a>
+    <hr>
+    {% for big in bigs %}
+        <p id = "bNames" href="/littleMatch"> {{ big.fname + ' ' + big.lname}} </p>
+    {% endfor %}
+</div>
+
+{% endblock %}
