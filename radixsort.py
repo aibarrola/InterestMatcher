@@ -51,7 +51,7 @@ def newList():
     for i in range(0, len(PLittle)):            # Inputs little's name for first index
         rankedLittle[i][0] = PLittle[i].fname + ' ' + PLittle[i].lname
 
-    #CREATING A NEW LIST FOR RANKING BIGS
+#CREATING A NEW LIST FOR RANKING BIGS
 
     for i in range(0, len(PLittle)):
         rankedBigs = []                 # Used to store bigs with name and score
