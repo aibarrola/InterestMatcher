@@ -4,18 +4,12 @@ from data import *
 from radixsort import *
 from flask import Flask, render_template, url_for
 
-SeperateObj()           #CREATES DATA CLASS AND OBJECT FOR EACH USER THEN SEPERATES INTO LITTLE AND BIG LIST         
 
+SeperateObj()               #Sets up data and creates little and big list       
+rankedLittle = newList()    #Radix sort
+
+#WEB GUI (FLASK)
 app = Flask(__name__)
-
-
-rankedLittle = newList()
-
-
-
-
-# BELOW IS USED FOR THE WEB GUI (FLASK)
-
 #HOMEPAGE
 @app.route("/")
 def home():
