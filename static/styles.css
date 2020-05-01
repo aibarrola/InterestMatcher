@@ -146,3 +146,20 @@ body {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;;
 }
+
+
+/* input */
+.inputDiv{
+    text-align:center
+}
+input{
+    height: 50px;
+    width: 50px;
+    font-size: 2em;
+
+}
+
+.top{
+    font-size: 2em;
+
+}
