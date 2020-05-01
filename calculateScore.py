@@ -62,7 +62,7 @@ def ScoreCompatibility(little,big):
     totalScore += eachScoreCompatibility(little.working_out, big.working_out)
     return totalScore
 
-
+#CALCULATES MAXIMUM DENOMINATOR FOR EACH LITTLE
 def eachDenominator(LittleInput):
     denominator = 0
     if LittleInput == "Love":
@@ -75,6 +75,7 @@ def eachDenominator(LittleInput):
         denominator += 30
     return denominator
     
+#ADDS THE DENOMINATOR FOR EACH INTEREST
 def TotalDenominator(little):
     totalDenominator = 0
     totalDenominator += eachDenominator(little.sports)
