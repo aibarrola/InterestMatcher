@@ -5,8 +5,7 @@ __Context__: The mentorship program are for new members to sign up as little bro
 
 __Challenges__: We had to figure out the best algorithm or data structure that best fits our model. We narrowed it down between: Radix sort, Priority Queue using heaps, and Bipartite matching algorithm. We decided with Radix sort because it has a time complexity of O(n) and it works with our model since it will always be a fixed number of bigs/littles. However, it takes more memory.
 
-__Personal Impact__: Increased accuracy of compatibilities by 10% by adding a dynamic factor to the algorithm
-Created the algorithm and point system that would determine compatibility between a big and little based on interests
+__Personal Impact__: Integrated Google Drive API to read user’s input from Google Sheets. Created and optimized algorithm by 10% to better determine compatibility based on interests
 
 ## Installments
 ```
